@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Sistema Ana Rey — Design Tokens
+   Marketing con sistema · base clara + acento naranja · plano, mobile-first
+   ========================================================================== */
+
+:root {
+  /* ---- Color ---- */
+  --color-bg: #FAFAF7;            /* fondo base */
+  --color-surface: #F1EEE6;       /* superficie / cards claras */
+  --color-ink: #17150F;           /* texto principal + fondo oscuro */
+  --color-ink-soft: #46433A;      /* cuerpo sobre claro */
+  --color-neutral: #8A8578;       /* labels / texto terciario */
+  --color-border: #E4E0D6;        /* bordes */
+
+  --color-accent: #FB6A2E;        /* naranja — CTAs y datos clave */
+  --color-accent-deep: #E4531A;   /* hover del acento */
+  --color-accent-tint: #FFE7D8;   /* fondo suave (badges) */
+  --color-accent-tint-border: #F6D3BF;
+  --color-accent-tint-ink: #96502E;
+
+  --color-success: #1F8A5B;       /* agenda / confirmación */
+
+  /* Sobre fondo oscuro (#17150F) */
+  --color-on-dark: #FAFAF7;
+  --color-on-dark-soft: #C7C3B8;
+  --color-chip-bg: rgba(250, 250, 247, .08);
+  --color-chip-border: rgba(250, 250, 247, .12);
+
+  /* ---- Tipografía ---- */
+  --font-display: "Bricolage Grotesque", sans-serif;  /* títulos 700/800 */
+  --font-body: "Hanken Grotesque", sans-serif;         /* cuerpo 400–700 */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  --tracking-tight: -0.03em;   /* títulos */
+  --tracking-num: -0.02em;     /* datos grandes */
+  --tracking-eyebrow: 0.14em;  /* labels mayúscula */
+
+  --leading-tight: 1.04;       /* títulos */
+  --leading-snug: 1.2;
+  --leading-body: 1.6;         /* cuerpo (1.55–1.65) */
+
+  /* Escala fluida (min → max) */
+  --fs-h1: clamp(34px, 7.2vw, 60px);      /* hero */
+  --fs-h2: clamp(28px, 6.2vw, 50px);      /* sección */
+  --fs-subtitle: clamp(17px, 4vw, 22px);  /* subtítulo hero */
+  --fs-lead: clamp(16px, 3.6vw, 19px);    /* cuerpo */
+  --fs-card-title: 19px;                  /* 18–20 */
+  --fs-card-body: 15px;                   /* 14–15 */
+  --fs-button: 17px;                      /* 15–17 */
+  --fs-eyebrow: 12px;
+  --fs-stat: clamp(36px, 8vw, 58px);      /* contadores */
+
+  /* ---- Espaciado ---- */
+  --space-section: clamp(56px, 10vw, 100px);   /* padding vertical sección */
+  --space-section-lg: clamp(60px, 11vw, 120px); /* hero / CTA final */
+  --space-gutter: 20px;                         /* padding lateral */
+  --space-card: 26px;                           /* padding interno card */
+  --space-card-lg: clamp(26px, 5vw, 44px);      /* bloques grandes */
+  --gap-grid: 16px;                             /* gap entre cards (14–16) */
+  --gap-hero: clamp(36px, 6vw, 56px);           /* columnas hero */
+
+  --container: 1080px;        /* ancho máx contenedor */
+  --container-narrow: 760px;  /* texto largo / FAQ */
+
+  /* ---- Radios ---- */
+  --radius-card: 18px;
+  --radius-card-lg: 22px;
+  --radius-block: 24px;
+  --radius-sm: 12px;      /* celdas / cards chicas (10–14) */
+  --radius-pill: 999px;   /* chips y botones */
+
+  /* ---- Sombras (diseño plano — solo en hover) ---- */
+  --shadow-none: none;
+  --shadow-card-hover: 0 8px 24px rgba(251, 106, 46, .10);
+
+  /* ---- Movimiento ---- */
+  --ease-reveal: cubic-bezier(.2, .7, .2, 1);
+  --dur-reveal: .7s;
+  --dur-ui: .2s;
+  --reveal-shift: 16px;         /* translateY inicial del reveal */
+  --lift-card: -3px;            /* translateY hover card */
+  --lift-button: -2px;          /* translateY hover botón */
+  --orbit-period: 22s;          /* 1 vuelta de la órbita */
+  --count-duration: 1.5s;       /* contadores (ease-out cúbico) */
+}

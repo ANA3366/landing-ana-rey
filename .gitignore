@@ -1,0 +1,22 @@
+# dependencias
+/node_modules
+
+# build de Next.js
+/.next
+/out
+
+# entorno
+.env*.local
+
+# sistema
+.DS_Store
+*.pem
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# assets pesados de referencia (videos) — se quedan locales, no al repo
+/assets/*.mp4
+/assets/*.mov
