@@ -11,17 +11,6 @@ import Reveal from "@/components/ui/Reveal";
  * Foto real en `public/ana.jpg`, optimizada por next/image (spec §2).
  */
 
-const ANCHORS = [
-  {
-    title: "Un solo interlocutor",
-    body: "Hablás siempre conmigo. Sin cadena de cuentas ni intermediarios.",
-  },
-  {
-    title: "Todo queda a tu nombre",
-    body: "Web, cuentas, campañas y automatizaciones son tuyas. Sin ataduras.",
-  },
-];
-
 function FotoAna() {
   return (
     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-block border border-border bg-surface">
@@ -66,27 +55,22 @@ export default function SobreMi() {
           <Reveal
             as="p"
             delay={0.12}
-            className="mt-5 max-w-[52ch] text-lead text-ink-soft"
+            className="mt-5 max-w-[56ch] text-lead text-ink-soft"
           >
-            Soy Ana. Ayudo a negocios de servicios y ecommerce a convertir su
-            presencia digital en un sistema que vende, sin robarles tiempo.
+            Soy Ana. Convierto la presencia digital de negocios de servicios y
+            ecommerce en un sistema que vende, sin que tengan que vivir pendientes
+            del celular.
           </Reveal>
 
-          <div className="mt-8 grid grid-cols-1 gap-grid sm:grid-cols-2">
-            {ANCHORS.map((anchor, i) => (
-              <Reveal
-                key={anchor.title}
-                as="div"
-                delay={0.18 + i * 0.08}
-                className="rounded-card border border-border bg-surface p-card"
-              >
-                <h3 className="font-display text-card-title font-bold text-ink">
-                  {anchor.title}
-                </h3>
-                <p className="mt-2 text-card-body text-ink-soft">{anchor.body}</p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal
+            as="p"
+            delay={0.18}
+            className="mt-4 max-w-[56ch] text-lead text-ink-soft"
+          >
+            Hago que todo funcione junto —marca, web, campañas y automatizaciones—
+            y que cada peso invertido se pueda medir, para que vos puedas volver a
+            enfocarte en lo que sabés hacer, tu negocio.
+          </Reveal>
         </div>
       </div>
     </Section>
