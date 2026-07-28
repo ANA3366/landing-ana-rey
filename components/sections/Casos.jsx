@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
@@ -117,7 +118,9 @@ export default function Casos() {
                 <StatReal label="conversaciones / mes">
                   <Counter value={200} prefix="+" />
                 </StatReal>
-                <StatPending value="00x" label="retorno de la inversión" />
+                <StatReal label="retorno de la inversión">
+                  <Counter value={5} suffix="x" />
+                </StatReal>
                 <StatReal label="costo por conversación">
                   <Counter value={0.61} decimals={2} prefix="USD " />
                 </StatReal>
@@ -136,6 +139,27 @@ export default function Casos() {
               stock ordenado, una web propia y un agente de IA personalizado que
               responde y ordena las consultas.
             </p>
+
+            {/* Preview de la web que le construimos (marco tipo navegador) */}
+            <figure className="mt-8 overflow-hidden rounded-card-lg border border-chip-border">
+              <div className="flex items-center gap-1.5 bg-chip-bg px-4 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral" aria-hidden="true" />
+                <span className="ml-3 text-[11px] font-semibold uppercase tracking-eyebrow text-on-dark-soft">
+                  ikenastore.com
+                </span>
+              </div>
+              <div className="relative aspect-[16/11] w-full bg-surface">
+                <Image
+                  src="/ikena-web.png"
+                  alt="Web de Ikena Store que construimos"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 1000px"
+                  className="object-cover object-top"
+                />
+              </div>
+            </figure>
 
             {/* Las piezas del sistema (cualitativo, spec §6: sin cifras estimadas) */}
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
