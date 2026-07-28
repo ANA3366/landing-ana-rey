@@ -1,6 +1,7 @@
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 import Counter from "@/components/ui/Counter";
+import Reels from "@/components/sections/Reels";
 
 /*
  * Sección 5 — Resultados / Casos (spec §4.6, §6).
@@ -100,24 +101,12 @@ export default function Casos() {
               </div>
             </div>
 
-            {/* Reels del sistema — reproducciones reales */}
+            {/* Reels del sistema — se reproducen en la web (autoplay silenciado
+                + botón de sonido). Ver components/sections/Reels.jsx. */}
             <div className="mt-10 border-t border-chip-border pt-6">
               <SubBlockTitle>Reels del sistema</SubBlockTitle>
-              <div className="mt-4 grid grid-cols-3 gap-4">
-                {[
-                  { n: "01", v: 290 },
-                  { n: "02", v: 265 },
-                  { n: "03", v: 198 },
-                ].map((reel) => (
-                  <div key={reel.n}>
-                    <div className="font-display text-[clamp(24px,5vw,34px)] font-black tracking-num text-on-dark">
-                      <Counter value={reel.v} suffix="k" />
-                    </div>
-                    <p className="mt-1 text-card-body text-on-dark-soft">
-                      Reel {reel.n} · reproducciones
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-4">
+                <Reels />
               </div>
             </div>
 

@@ -4,6 +4,11 @@ import Problema from "@/components/sections/Problema";
 import Metodo from "@/components/sections/Metodo";
 import Modulos from "@/components/sections/Modulos";
 import Casos from "@/components/sections/Casos";
+import ParaQuien from "@/components/sections/ParaQuien";
+import SobreMi from "@/components/sections/SobreMi";
+import Faq from "@/components/sections/Faq";
+import CtaFinal from "@/components/sections/CtaFinal";
+import Footer from "@/components/site/Footer";
 
 export default function Home() {
   return (
@@ -15,8 +20,12 @@ export default function Home() {
         <Metodo />
         <Modulos />
         <Casos />
-        {/* Próximas secciones: Para quién, Sobre mí, FAQ, CTA final, Footer. */}
+        <ParaQuien />
+        <SobreMi />
+        <Faq />
+        <CtaFinal />
       </main>
+      <Footer />
     </>
   );
 }
