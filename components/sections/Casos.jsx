@@ -140,7 +140,10 @@ export default function Casos() {
               responde y ordena las consultas.
             </p>
 
-            {/* Preview de la web que le construimos (marco tipo navegador) */}
+            {/* Preview de la web de Ikena (marco tipo navegador).
+                Desactivada hasta que exista public/ikena-web.png, para no mostrar
+                una imagen rota en producción. Al subir la imagen: cambiar `false` por `true`. */}
+            {false && (
             <figure className="mt-8 overflow-hidden rounded-card-lg border border-chip-border">
               <div className="flex items-center gap-1.5 bg-chip-bg px-4 py-3">
                 <span className="h-2.5 w-2.5 rounded-full bg-neutral" aria-hidden="true" />
@@ -160,6 +163,7 @@ export default function Casos() {
                 />
               </div>
             </figure>
+            )}
 
             {/* Las piezas del sistema (cualitativo, spec §6: sin cifras estimadas) */}
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
