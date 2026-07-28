@@ -114,7 +114,9 @@ export default function Casos() {
             <div className="mt-8 border-t border-chip-border pt-6">
               <SubBlockTitle>Campañas Meta</SubBlockTitle>
               <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-3">
-                <StatPending value="00+" label="conversaciones / mes" />
+                <StatReal label="conversaciones / mes">
+                  <Counter value={200} prefix="+" />
+                </StatReal>
                 <StatPending value="00x" label="retorno de la inversión" />
                 <StatReal label="costo por conversación">
                   <Counter value={0.61} decimals={2} prefix="USD " />
@@ -124,48 +126,67 @@ export default function Casos() {
           </article>
         </Reveal>
 
-        {/* ---- Caso · Braszka Electrónica ---- */}
+        {/* ---- Caso · Ikena Store ---- */}
         <Reveal>
           <article className="rounded-block bg-ink p-card-lg text-on-dark-soft">
-            <CaseBadge>Caso · Braszka Electrónica</CaseBadge>
+            <CaseBadge>Caso · Ikena Store</CaseBadge>
             <p className="mt-5 max-w-[62ch] text-lead">
-              Un ecommerce de electrónica atado a una plataforma de plantillas:
-              comisiones por venta, catálogo que no se podía tocar y stock que se
-              contaba a mano. Le construimos una web propia desde cero + un
-              sistema de stock a medida. Hoy vende online sin pagarle un peaje a
-              nadie.
+              Una tienda de indumentaria que necesitaba orden y presencia. Le
+              montamos el sistema completo: contenido que muestra sus prendas, un
+              stock ordenado, una web propia y un agente de IA personalizado que
+              responde y ordena las consultas.
             </p>
 
-            {/* Headline: 0% comisión (real) + 2 pendientes */}
-            <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
-              <StatReal label="comisión por venta">0%</StatReal>
-              <StatPending value="+00" label="horas semanales ahorradas" />
-              <StatPending value="00%" label="nuevos clientes captados" />
+            {/* Las piezas del sistema (cualitativo, spec §6: sin cifras estimadas) */}
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                {
+                  t: "Contenido que vende",
+                  d: "Producción y edición que muestran lo mejor de cada prenda.",
+                },
+                {
+                  t: "Stock ordenado",
+                  d: "Inventario bajo control, sin contar a mano.",
+                },
+                {
+                  t: "Web propia",
+                  d: "Tienda a su marca, lista para vender.",
+                },
+                {
+                  t: "Agente de IA personalizado",
+                  d: "Responde consultas y ordena los pedidos, sin frenar la venta.",
+                },
+              ].map((pieza) => (
+                <div
+                  key={pieza.t}
+                  className="rounded-card border border-chip-border bg-chip-bg p-card"
+                >
+                  <div className="flex items-start gap-3">
+                    <span
+                      className="mt-1.5 block h-2 w-2 shrink-0 rounded-full bg-accent"
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 className="font-display text-card-title font-bold text-on-dark">
+                        {pieza.t}
+                      </h3>
+                      <p className="mt-1 text-card-body text-on-dark-soft">
+                        {pieza.d}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Contraste antes → después (spec §6, formato preferido) */}
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="rounded-card border border-chip-border p-card">
-                <SubBlockTitle>Plataforma de plantillas</SubBlockTitle>
-                <ul className="mt-3 space-y-2 text-card-body text-on-dark-soft">
-                  <li>— Comisión sobre cada venta</li>
-                  <li>— Diseño clonado, igual a mil tiendas</li>
-                  <li>— Stock separado del sitio</li>
-                  <li>— Dependés de sus reglas</li>
-                </ul>
-              </div>
-              <div className="rounded-card border border-accent-tint-border bg-chip-bg p-card">
-                <p className="text-eyebrow font-bold uppercase tracking-eyebrow text-accent">
-                  El sistema Braszka
-                </p>
-                <ul className="mt-3 space-y-2 text-card-body text-on-dark">
-                  <li>+ Cero comisiones, la venta es tuya</li>
-                  <li>+ Diseño único, hecho a tu marca</li>
-                  <li>+ Stock conectado en tiempo real</li>
-                  <li>+ Es tuyo. Sin peajes ni límites</li>
-                </ul>
-              </div>
-            </div>
+            <a
+              href="https://instagram.com/ikenastore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block text-card-body font-semibold text-accent"
+            >
+              Ver Ikena Store en Instagram →
+            </a>
           </article>
         </Reveal>
       </div>
