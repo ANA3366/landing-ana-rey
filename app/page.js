@@ -1,5 +1,6 @@
 import Header from "@/components/site/Header";
 import Hero from "@/components/sections/Hero";
+import Objeciones from "@/components/sections/Objeciones";
 import Problema from "@/components/sections/Problema";
 import Metodo from "@/components/sections/Metodo";
 import Modulos from "@/components/sections/Modulos";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Objeciones />
         <Problema />
         <Metodo />
         <Modulos />
