@@ -1,35 +1,40 @@
-import Header from "@/components/site/Header";
-import Hero from "@/components/sections/Hero";
-import Objeciones from "@/components/sections/Objeciones";
-import Problema from "@/components/sections/Problema";
-import Metodo from "@/components/sections/Metodo";
-import Modulos from "@/components/sections/Modulos";
-import Casos from "@/components/sections/Casos";
-import Pauta from "@/components/sections/Pauta";
-import ParaQuien from "@/components/sections/ParaQuien";
-import SobreMi from "@/components/sections/SobreMi";
-import Faq from "@/components/sections/Faq";
-import CtaFinal from "@/components/sections/CtaFinal";
-import Footer from "@/components/site/Footer";
+/*
+ * Configuración central del sitio.
+ * Un solo lugar para el número de WhatsApp y los mensajes pre-cargados por
+ * sección (spec §7): cada CTA abre wa.me con un texto distinto según de dónde
+ * salió, para poder rastrear qué sección convierte.
+ */
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Objeciones />
-        <Problema />
-        <Metodo />
-        <Modulos />
-        <Casos />
-        <Pauta />
-        <ParaQuien />
-        <SobreMi />
-        <Faq />
-        <CtaFinal />
-      </main>
-      <Footer />
-    </>
-  );
+export const WHATSAPP_NUMBER = "5492922424416";
+
+// Mensaje pre-cargado por sección de origen.
+export const WHATSAPP_MESSAGES = {
+  header: "Hola Ana 👋 Quiero saber más sobre el sistema.",
+  hero: "Hola Ana 👋 Quiero mi sistema. ¿Cómo empezamos?",
+  metodo: "Hola Ana, me interesa el método. Quiero que auditemos mi negocio.",
+  modulos: "Hola Ana, quiero armar el sistema completo para mi negocio.",
+  resultados: "Hola Ana, vi los casos y quiero resultados así para mi negocio.",
+  pauta: "Hola Ana, quiero revisar mis campañas de Meta Ads.",
+  paraQuien: "Hola Ana, creo que mi negocio encaja. ¿Lo vemos?",
+  ctaAgenda: "Hola Ana, quiero agendar mi llamada de reconocimiento.",
+  ctaDirecto: "Hola Ana, prefiero ir directo al grano. ¿Hablamos?",
+};
+
+/**
+ * Arma el link de WhatsApp con el mensaje de la sección indicada.
+ * @param {keyof typeof WHATSAPP_MESSAGES} section
+ */
+export function waLink(section) {
+  const text = WHATSAPP_MESSAGES[section] ?? WHATSAPP_MESSAGES.header;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
+
+// Módulos que orbitan el núcleo en el Hero (copy §1).
+export const HERO_ORBIT_MODULES = [
+  "Branding",
+  "Identidad",
+  "Contenido",
+  "Procesos",
+  "Automatización",
+  "Auditoría",
+];
